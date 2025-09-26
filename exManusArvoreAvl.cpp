@@ -232,7 +232,7 @@ int main(){
     time_t inicio, fim;
     inicio = clock();
     // Ler arquivo CSV (você pode alterar o nome do arquivo) Essa função já cria a lista dinâmica com os alunos
-    lerArquivoCSV("alunos_completosV2.csv");
+    lerArquivoCSV("..//alunos_completosV2.csv");
     fim = clock();
     //se eu quiser pegar como inteiro o valor do tempo
 

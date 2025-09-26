@@ -9,6 +9,11 @@
 //A0000000,915.216.859-08,Wallace Sampaio,20.35,23,Direito,Rio de Janeiro
 
 
+
+/*Utilizando a estrutura que já fizemos, implemente as operações de pesquisar, inserir e excluir em uma arvore binária com
+balanceamento em uma estrutura dinâmica e uma estrutura de vetor.
+Utilize mais um atributo nos nós para já ter a altura daquele nó. Isso facilita a verificação se existe necessidade de balanceamento.*/
+
 struct Aluno{
     char matricula[9];
     char cpf[15];
@@ -33,8 +38,9 @@ struct Alunos{
 Alunos a;
 
 void inicializa(){
-    ////.....
-    ;
+    a.raiz = NULL;
+    a.quantidade = 0;
+    a.tamanhoAtual = 0;
 }
 
 void atualizaAltura(Aluno *no){
@@ -175,8 +181,6 @@ void exibirAlunos() {
     }
     printf("Total: %d alunos\n\n", a.quantidade);
 }
-
-
 int main(){
     inicializa();
     printf("=== SISTEMA DE LEITURA DE ALUNOS CSV ===\n\n");
@@ -184,7 +188,7 @@ int main(){
     time_t inicio, fim;
     inicio = clock();
     // Ler arquivo CSV (você pode alterar o nome do arquivo) Essa função já cria a lista dinâmica com os alunos
-    lerArquivoCSV("alunos_completosV2.csv");
+    lerArquivoCSV("alunos.csv");
     fim = clock();
     //se eu quiser pegar como inteiro o valor do tempo
 
